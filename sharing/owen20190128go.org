@@ -1,0 +1,188 @@
+
+** QA
+
+Martin: How to set up env on Windows:
+A: Install like
+#+BEGIN_SRC 
+nvm (optional). Used to manage node versions. Currenty in taro we need node v11.
+node
+vs code (IDE). Strongly recommended.
+cmd. Windows command line.
+git.
+sourcetree, https://www.sourcetreeapp.com/, git GUI.
+#+END_SRC
+
+** About taro
+
+大前端是趋势，因为H5, Android, iOS已经很消耗人力了，然后又出来了Wechat小程序，百度小程序(swan), 阿里小程序等等，还有各种智能电视，智能手表。
+taro 的原理是使用_编译原理_来解析React语法，然后转成各种其它平台需要的语法。
+
+可以参考掘金：https://juejin.im/book/5b73a131f265da28065fb1cd/section/5b74ec07e51d4566633b2930
+
+#+BEGIN_QUOTE
+那么如何实现使用 React 来开发小程序呢？在 Taro 中采用的是编译原理的思想，所谓编译原理，就是一个对输入的源代码进行语法分析，语法树构建，随后对语法树进行转换操作再解析生成目标代码的过程。
+#+END_QUOTE
+
+强烈推荐git clone如下官方demo并在本地跑起来：
+https://github.com/o2team/taro-ebook-source.git
+
+下一次我们分享taro。
+
+** Sharing about go
+
+主要素材来自于 Go Tour。
+
+Owen建议搭建本地go环境以后，自己把 Go Tour的例子都改改、跑跑。
+
+Go是C工程师“偷懒”的下一步
+
+Go把类型放在后面：
+
+#+BEGIN_SRC 
+// This is C
+int add(int a, int b) {
+  return a + b
+}
+
+// This is Go
+func add(a, b int) int { // same as "x int, y int"
+  return a + b
+}
+#+END_SRC
+
+Go 可以返回多个值，所以写值交换的面试题可以这么写（气死面试官）：
+
+#+BEGIN_SRC 
+func swap(a, b string) (string, string) {
+  return b, a
+}
+#+END_SRC
+
+For 循环没有圆括号
+
+#+BEGIN_SRC 
+for i := 0; i < 10; i++ {
+	sum += i
+}
+#+END_SRC
+
+最简洁的死循环
+
+#+BEGIN_SRC 
+// If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
+for {
+}
+#+END_SRC
+
+Switch 也可以偷懒，不用写“break”啦！如果怀念C，可以用“fallthrough”来达到，不懂请谷歌
+
+#+BEGIN_SRC 
+fmt.Print("Go runs on ")
+switch os := runtime.GOOS; os {
+case "darwin":
+	fmt.Println("OS X.")
+        // break // 不再需要break。
+case "linux":
+	fmt.Println("Linux.")
+default:
+	// freebsd, openbsd,
+	// plan9, windows...
+	fmt.Printf("%s.", os)
+}
+#+END_SRC
+
+Go数据结构：array, slice （动态数组）, map
+
+#+BEGIN_SRC 
+// Slice
+func testAppend() {
+  fmt.Println("testAppend")
+
+  // If the backing array of s is too small to fit all the given values a bigger array will be allocated.
+  var s []int
+%  printSlice(s) // len=0 cap=0 []
+
+  // append works on nil slices.
+  s = append(s, 0)
+  printSlice(s) // len=1 cap=1 [0]
+
+  // The slice grows as needed.
+  s = append(s, 1)
+  printSlice(s) // len=2 cap=2 [0 1]
+
+  // We can add more than one element at a time.
+  s = append(s, 2, 3, 4)
+  printSlice(s) // len=5 cap=6 [0 1 2 3 4]
+  
+  s = s[:2]
+  printSlice(s) // len=2 cap=6 [0 1]
+}
+
+// 二维数组
+func slicesOfSlices() {
+// Create a tic-tac-toe board.
+  board := [][]string{
+    []string{"_", "_", "_"},
+    []string{"_", "_", "_"},
+    []string{"_", "_", "_"},
+  }
+
+  // The players take turns.
+  board[0][0] = "X"
+  board[2][2] = "O"
+  board[1][2] = "X"
+  board[1][0] = "O"
+  board[0][2] = "X"
+
+  for i := 0; i < len(board); i++ {
+    fmt.Printf("%s\n", strings.Join(board[i], " "))
+  }
+}
+
+#+END_SRC
+
+Go面试必须要会的题目1: defer
+
+#+BEGIN_SRC 
+fmt.Println("counting")
+for i := 0; i < 10; i++ {
+  defer fmt.Println(i)
+}
+fmt.Println("done")
+
+// What is the output?
+
+// counting
+// done
+// 9
+// ...
+// 0
+#+END_SRC
+
+Go面试必须要会的题目2：closure (和JS里面的闭包一样，用来给函数赋予一个内部状态)
+
+#+BEGIN_SRC 
+func adder() func(int) int {
+  sum := 0 // 这个sum变量就是用来记录函数状态。它只能通过returned function来获取和操作。
+  return func(x int) int {
+    sum += x
+    return sum
+  }
+}
+
+pos, neg := adder(), adder()
+for i := 0; i < 10; i++ {
+  fmt.Println(
+    pos(i),
+    neg(-2*i),
+  )
+} // 45 -90
+
+// 建议大家跑跑这一段代码, learn by running
+#+END_SRC
+
+** 鼓励大家多多share and learn
+
+学习萌妹贡献开源：https://github.com/komeiji-satori/Dress
+
+

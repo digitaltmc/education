@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2019-01-28 Mon 13:33 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Chaofeng Wang" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2018 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org1a338b2">1. QA</a></li>
+<li><a href="#org20d16d1">2. About taro</a></li>
+<li><a href="#org28d6605">3. Sharing about go</a></li>
+<li><a href="#org3d35120">4. 鼓励大家多多share and learn</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org1a338b2" class="outline-2">
+<h2 id="org1a338b2"><span class="section-number-2">1</span> QA</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Martin: How to set up env on Windows:
+A: Install like
+</p>
+<pre class="example">
+nvm (optional). Used to manage node versions. Currenty in taro we need node v11.
+node
+vs code (IDE). Strongly recommended.
+cmd. Windows command line.
+git.
+sourcetree, https://www.sourcetreeapp.com/, git GUI.
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org20d16d1" class="outline-2">
+<h2 id="org20d16d1"><span class="section-number-2">2</span> About taro</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+大前端是趋势，因为H5, Android, iOS已经很消耗人力了，然后又出来了Wechat小程序，百度小程序(swan), 阿里小程序等等，还有各种智能电视，智能手表。
+taro 的原理是使用<sub>编译原理</sub><sub>来解析React语法</sub>，然后转成各种其它平台需要的语法。
+</p>
+
+<p>
+可以参考掘金：<a href="https://juejin.im/book/5b73a131f265da28065fb1cd/section/5b74ec07e51d4566633b2930">https://juejin.im/book/5b73a131f265da28065fb1cd/section/5b74ec07e51d4566633b2930</a>
+</p>
+
+<blockquote>
+<p>
+那么如何实现使用 React 来开发小程序呢？在 Taro 中采用的是编译原理的思想，所谓编译原理，就是一个对输入的源代码进行语法分析，语法树构建，随后对语法树进行转换操作再解析生成目标代码的过程。
+</p>
+</blockquote>
+
+<p>
+强烈推荐git clone如下官方demo并在本地跑起来：
+<a href="https://github.com/o2team/taro-ebook-source.git">https://github.com/o2team/taro-ebook-source.git</a>
+</p>
+
+<p>
+下一次我们分享taro。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org28d6605" class="outline-2">
+<h2 id="org28d6605"><span class="section-number-2">3</span> Sharing about go</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+主要素材来自于 Go Tour。
+</p>
+
+<p>
+Owen建议搭建本地go环境以后，自己把 Go Tour的例子都改改、跑跑。
+</p>
+
+<p>
+Go是C工程师“偷懒”的下一步
+</p>
+
+<p>
+Go把类型放在后面：
+</p>
+
+<pre class="example">
+// This is C
+int add(int a, int b) {
+  return a + b
+}
+
+// This is Go
+func add(a, b int) int { // same as "x int, y int"
+  return a + b
+}
+</pre>
+
+<p>
+Go 可以返回多个值，所以写值交换的面试题可以这么写（气死面试官）：
+</p>
+
+<pre class="example">
+func swap(a, b string) (string, string) {
+  return b, a
+}
+</pre>
+
+<p>
+For 循环没有圆括号
+</p>
+
+<pre class="example">
+for i := 0; i &lt; 10; i++ {
+        sum += i
+}
+</pre>
+
+<p>
+最简洁的死循环
+</p>
+
+<pre class="example">
+// If you omit the loop condition it loops forever, so an infinite loop is compactly expressed.
+for {
+}
+</pre>
+
+<p>
+Switch 也可以偷懒，不用写“break”啦！如果怀念C，可以用“fallthrough”来达到，不懂请谷歌
+</p>
+
+<pre class="example">
+fmt.Print("Go runs on ")
+switch os := runtime.GOOS; os {
+case "darwin":
+        fmt.Println("OS X.")
+        // break // 不再需要break。
+case "linux":
+        fmt.Println("Linux.")
+default:
+        // freebsd, openbsd,
+        // plan9, windows...
+        fmt.Printf("%s.", os)
+}
+</pre>
+
+<p>
+Go数据结构：array, slice （动态数组）, map
+</p>
+
+<pre class="example">
+// Slice
+func testAppend() {
+  fmt.Println("testAppend")
+
+  // If the backing array of s is too small to fit all the given values a bigger array will be allocated.
+  var s []int
+%  printSlice(s) // len=0 cap=0 []
+
+  // append works on nil slices.
+  s = append(s, 0)
+  printSlice(s) // len=1 cap=1 [0]
+
+  // The slice grows as needed.
+  s = append(s, 1)
+  printSlice(s) // len=2 cap=2 [0 1]
+
+  // We can add more than one element at a time.
+  s = append(s, 2, 3, 4)
+  printSlice(s) // len=5 cap=6 [0 1 2 3 4]
+
+  s = s[:2]
+  printSlice(s) // len=2 cap=6 [0 1]
+}
+
+// 二维数组
+func slicesOfSlices() {
+// Create a tic-tac-toe board.
+  board := [][]string{
+    []string{"_", "_", "_"},
+    []string{"_", "_", "_"},
+    []string{"_", "_", "_"},
+  }
+
+  // The players take turns.
+  board[0][0] = "X"
+  board[2][2] = "O"
+  board[1][2] = "X"
+  board[1][0] = "O"
+  board[0][2] = "X"
+
+  for i := 0; i &lt; len(board); i++ {
+    fmt.Printf("%s\n", strings.Join(board[i], " "))
+  }
+}
+
+</pre>
+
+<p>
+Go面试必须要会的题目1: defer
+</p>
+
+<pre class="example">
+fmt.Println("counting")
+for i := 0; i &lt; 10; i++ {
+  defer fmt.Println(i)
+}
+fmt.Println("done")
+
+// What is the output?
+
+// counting
+// done
+// 9
+// ...
+// 0
+</pre>
+
+<p>
+Go面试必须要会的题目2：closure (和JS里面的闭包一样，用来给函数赋予一个内部状态)
+</p>
+
+<pre class="example">
+func adder() func(int) int {
+  sum := 0 // 这个sum变量就是用来记录函数状态。它只能通过returned function来获取和操作。
+  return func(x int) int {
+    sum += x
+    return sum
+  }
+}
+
+pos, neg := adder(), adder()
+for i := 0; i &lt; 10; i++ {
+  fmt.Println(
+    pos(i),
+    neg(-2*i),
+  )
+} // 45 -90
+
+// 建议大家跑跑这一段代码, learn by running
+</pre>
+</div>
+</div>
+
+<div id="outline-container-org3d35120" class="outline-2">
+<h2 id="org3d35120"><span class="section-number-2">4</span> 鼓励大家多多share and learn</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+学习萌妹贡献开源：<a href="https://github.com/komeiji-satori/Dress">https://github.com/komeiji-satori/Dress</a>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Chaofeng Wang</p>
+<p class="date">Created: 2019-01-28 Mon 13:33</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

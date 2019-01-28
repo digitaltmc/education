@@ -1,0 +1,62 @@
+https://juejin.im/book/5b73a131f265da28065fb1cd/section/5b73a1316fb9a009ce489c30
+
+美团点评的基于 Vue 语法的 mpvue 框架，还有腾讯团队的 WePY。
+
+
+** Installation
+
+#+BEGIN_SRC 
+npm install -g @tarojs/cli
+# or
+yarn global add @tarojs/cli
+
+# Check if taro is installed.
+taro -V
+
+taro init myApp
+
+npm run dev:weapp
+npm run build:weapp
+
+# Baidu
+npm run dev:swan
+# Ali
+npm run dev:alipay
+# H5
+npm run dev:h5
+# RN
+npm run dev:rn
+
+#---------- update taro
+
+taro update self
+taro update project
+
+#+END_SRC
+
+*** weapp
+
+添加的路径为项目根目录下的 dist 文件夹。此外，由于 Taro 编译后的代码已经经过了转义和压缩，因此还需要注意微信开发者工具的项目设置：
+
+* 设置关闭 ES6 转 ES5 功能
+* 设置关闭上传代码时样式自动补全
+* 设置关闭代码压缩上传
+
+** Reference
+
+JSX不支持的一些语法：https://juejin.im/book/5b73a131f265da28065fb1cd/section/5b74d725e51d45665e39eb98
+
+CLI原理 https://juejin.im/book/5b73a131f265da28065fb1cd/section/5b74ec07e51d4566633b2930
+
+那么如何实现使用 React 来开发小程序呢？在 Taro 中采用的是编译原理的思想，所谓编译原理，就是一个对输入的源代码进行语法分析，语法树构建，随后对语法树进行转换操作再解析生成目标代码的过程。
+
+** FAQ
+
+*** taro-init(1) does not exist, try --help
+
+https://github.com/NervJS/taro/issues/699
+
+#+BEGIN_SRC 
+export PATH=$PATH:~/.config/yarn/global/node_modules/@tarojs/cli/bin/
+#+END_SRC
+
